@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gilroy;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#page1{
+    height: 100%;
+    width: 100%;
+    background-color:lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page2{
+    height: 100%;
+    width: 100%;
+    background-color:rgb(0, 26, 35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#box{
+    width: 300px;
+    height:250px;
+    background-color: rgb(12, 16, 126);
+
+}
+    </style>
+</head>
+<body>
+    <div id="page1">
+        <div id="box"></div>
+    </div>
+    <div id="page2">
+        <div id="box"></div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.from("#page1 #box",{
+            scale:0,//shudhu scale use korle zoom out hobe viotr theke bbahir e asbe box open er moto
+            delay:1,
+            duration:1,
+            rotate:360
+        })
+
+        gsap.from("#page2 #box",{
+            scale:0,//shudhu scale use korle zoom out hobe viotr theke bbahir e asbe box open er moto
+            delay:1,
+            duration:1,
+            rotate:360,
+            //scrolltrigger just formate here
+            scrollTrigger:{
+                trigger:"#page2 #box",
+                body:"scroller",
+            }
+        })
+
+
+    </script>
+</body>
+</html>
